@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+	<title></title>
+	<link rel="stylesheet" href="css/swiper.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script type="text/javascript">
+		;(function (doc, win) {
+	        var docEl = doc.documentElement,
+	            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+	            recalc = function () {
+	                var clientWidth = docEl.clientWidth;
+	                if (!clientWidth) return;
+	                if(clientWidth>=450){
+	                    docEl.style.fontSize = '60px';
+	                }else{
+	                    docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+	                }
+	            };
+
+	        if (!doc.addEventListener) return;
+	        win.addEventListener(resizeEvt, recalc, false);
+	        doc.addEventListener('DOMContentLoaded', recalc, false);
+	    })(document, window);
+	</script>
+</head>
+<body>
+	<div class="wrp demo1">
+		<div class="ico-music play"></div>
+		<div class="swiper-container">
+	        <div class="swiper-wrapper">
+	            <div class="swiper-slide p-d">
+	            	<div class="p-d-title-wrp p-d-common">
+	            		<div class="p-d-title p-d-common"></div>
+	            	</div>
+	            	<div class="p-d-line">
+	            		<div class="p-d-line-img"></div>
+	            	</div>
+	            	<div class="p-d-light">
+	            		<div class="p-d-light-low"></div>
+	            		<div class="p-d-light-hight"></div>
+	            		<div class="p-d-light-des"></div>
+	            	</div>
+	            	<div class="p-d-video p-d-common">
+	            		<a class="p-d-video-btn p-d-common" href="javascript:;"></a>
+	            	</div>
+	            </div>
+	            <div class="swiper-slide p-d2">
+					<div class="p-d2-logo p-d-common"></div>
+					<div class="p-d2-line">
+	            		<!-- <div class="p-d-line-img"></div> -->
+	            	</div>
+	            	<div class="p-d2-des"></div>
+	            	<div class="p-d2-bottom">
+	            		<div class="p-d2-btn">
+		            		<div class="p-d2-back">
+			            	</div>
+			            	<a class="p-d2-back-a p-d-common center" href="javascript:;"></a>
+		            	</div>
+		            	<div class="p-d2-btn">
+			            	<div class="p-d2-share">
+			            	</div>
+			            	<a class="p-d2-share-a p-d-common center" href="javascript:;"></a>
+		            	</div>
+	            	</div>
+	            	<div class="p-d2-ad">
+	            		<div class="p-d2-ad-item p-d-common"></div>
+	            	</div>
+	            </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/swiper.jquery.min.js"></script>
+	<script type="text/javascript">
+		var swiper = new Swiper('.swiper-container', {
+			direction : 'vertical'
+		});
+	</script>
+</body>
+</html>

@@ -7,6 +7,7 @@
     <meta content="yes" name="apple-mobile-web-app-capable">
     <meta content="yes" name="apple-touch-fullscreen">
 	<title></title>
+	<link rel="stylesheet" href="css/swiper.min.css">
 	<link rel="stylesheet" href="css/style.css">
 	<script type="text/javascript">
 		;(function (doc, win) {
@@ -26,23 +27,96 @@
 	        win.addEventListener(resizeEvt, recalc, false);
 	        doc.addEventListener('DOMContentLoaded', recalc, false);
 	    })(document, window);
-
 	</script>
 </head>
 <body>
 	<div class="wrp">
-		<div class="ico-music"></div>
-		<div class="p1">
-			<img class="p1-title" src="images/p1-title.png" alt="">
-			<div class="p1-video"></div>
-			<p class="p1-des">公元2017年</p>
-			<p class="p1-des">你百无聊赖的在大街上闲逛</p>
-			<p class="p1-des">一个被追杀的满身是血的硬汉</p>
-			<p class="p1-des">强行将放影机塞到你手里</p>
-			<p class="p1-des">告诉你里面有着划世纪意义的重要文件</p>
-			<p class="p1-des">务必要保管好……</p>
-			<a class="p1-btn" href="javascript:;"></a>
-		</div>
-	</div>
+		<div class="ico-music play"></div>
+		<div class="swiper-container">
+	        <div class="swiper-wrapper">
+	            <div class="swiper-slide p1">
+	            	<img class="p1-title" src="images/p1-title.png" alt="">
+					<div class="p1-video"></div>
+					<p class="p1-des line1"></p>
+					<p class="p1-des line2"></p>
+					<p class="p1-des line3"></p>
+					<p class="p1-des line4"></p>
+					<p class="p1-des line5"></p>
+					<p class="p1-des line6"></p>
+					<a id="p1-btn" class="p1-btn" href="javascript:;"></a>
+	            </div>
+	            <div class="swiper-slide p2">
+	            	<div class="center">
+						<div class="item left">
+							<div class="p2-round">
+								<div class="p2-wheel"></div>
+								<div class="p2-play"></div>
+							</div>
+							<div class="p2-bg">
+								<div class="p2-txt"></div>
+							</div>
+						</div>
+						<div class="item right">
+							<div class="p2-bg">
+								<div class="p2-txt"></div>
+							</div>
+							<div class="p2-round">
+								<div class="p2-wheel"></div>
+								<div class="p2-play"></div>
+							</div>
+						</div>
+						<div class="item left">
+							<div class="p2-round">
+								<div class="p2-wheel"></div>
+								<div class="p2-play"></div>
+							</div>
+							<div class="p2-bg">
+								<div class="p2-txt"></div>
+							</div>
+						</div>
+						<div class="item right">
+							<div class="p2-bg">
+								<div class="p2-txt"></div>
+							</div>
+							<div class="p2-round">
+								<div class="p2-wheel"></div>
+								<div class="p2-play"></div>
+							</div>
+						</div>
+						<div class="item left">
+							<div class="p2-round">
+								<div class="p2-wheel"></div>
+								<div class="p2-play"></div>
+							</div>
+							<div class="p2-bg">
+								<div class="p2-txt"></div>
+							</div>
+						</div>
+					</div>
+	            </div>
+	        </div>
+	    </div>
+    </div>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/swiper.jquery.min.js"></script>
+	<script type="text/javascript">
+		var swiper = new Swiper('.swiper-container', {
+			direction : 'vertical'
+		});
+		$("#p1-btn").click(function(){
+			swiper.slideNext();
+		})
+		$(".ico-music").click(function(){
+			// 正在播放
+			if($(this).hasClass("play")){
+				$(this).removeClass("play");
+			}else {
+				$(this).addClass("play");
+			}
+		})
+		$(".p2-wheel").click(function(){
+			window.location.href = 'details.html'
+		})
+	</script>
 </body>
 </html>

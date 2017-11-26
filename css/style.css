@@ -7,6 +7,9 @@ audio, canvas, progress, video { display: inline-block; vertical-align: baseline
 html,body {
 	height: 100%;
 }
+div {
+	margin: 0 auto;
+}
 html {
 	font-family: "Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif;
 }
@@ -20,6 +23,19 @@ body {
 	background: url(../images/bg.jpg) no-repeat center;
 	background-size: cover;
 }
+.swiper-container {
+	height: 100%;
+}
+.center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+.hide {
+	display: none;
+}
 .ico-music {
 	position: absolute;
 	top: 0.3rem;
@@ -29,13 +45,18 @@ body {
 	padding: 5px;
 	background: url(../images/music.png) no-repeat center;
 	background-size: 0.43rem 0.43rem;
+	z-index: 999;
+}
+.ico-music.play {
+	-webkit-animation: rotate 3s linear infinite; 
+	animation: rotate 3s linear infinite; 
 }
 .p1-title {
 	display: block;
 	width: 6.01rem;
 	height: 1.68rem;
 	margin: 0 auto;
-	padding-top: 0.7rem;
+	padding-top: 0.9rem;
 }
 .p1-video {
 	margin: 0.45rem auto 0.3rem;
@@ -45,16 +66,338 @@ body {
 	background-size: cover;
 }
 .p1-des {
-	font-size: 12px;
-	line-height: 20px;
-	color: #000;
-	text-align: center;
+	height: 0.35rem;
+	background-image: url(../images/p1-des.png);
+	background-repeat: no-repeat; 
+	background-size: 4.29rem 2.06rem;
+}
+.p1-des.line1 {
+	background-position: center 0;
+}
+.p1-des.line2 {
+	background-position: center -0.35rem;
+	
+}
+.p1-des.line3 {
+	background-position: center -0.7rem;
+	
+}
+.p1-des.line4 {
+	background-position: center -1.05rem;
+	
+}
+.p1-des.line5 {
+	background-position: center -1.4rem;
+	
+}
+.p1-des.line6 {
+	background-position: center -1.75rem;
+	
 }
 .p1-btn {
 	display: block;
 	width: 2.02rem;
 	height: 1.02rem;
-	margin: 0.3rem auto 0;
+	margin: 0.5rem auto 0;
 	background: url(../images/p1-btn.png) no-repeat center;
 	background-size: cover;
 }
+.p2 .item {
+	display: -webkit-flex;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: .3rem;
+}
+.p2 .item.left .p2-bg {
+	margin-left: -10px;
+	margin-right: 1.94rem;
+}
+.p2 .item.right .p2-bg {
+	margin-right: -10px;
+	margin-left: 1.94rem;	
+}
+.p2-round {
+	position: relative;
+	width: 1.94rem;
+	height: 2rem;
+}
+.p2-wheel {
+	display: inline-block;
+	width: 1.94rem;
+	height: 2rem;
+	background: url(../images/p2-wheel.png) no-repeat center;
+	background-size: 1.94rem 2rem;
+	-webkit-animation: rotate 4s linear infinite; 
+	animation: rotate 4s linear infinite; 
+}
+.p2-play {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 0.92rem;
+	height: 0.95rem;
+	background: url(../images/p2-play.png) no-repeat center;
+	background-size: 0.92rem 0.95rem;
+}
+.p2-bg {
+	display: -webkit-flex;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 3.27rem;
+	height: 1.28rem;
+	background: url(../images/p2-bg.png) no-repeat center;
+	background-size: 3.27rem 1.28rem;
+}
+.p2-txt {
+	width: 2.14rem;
+	height: 1rem;
+	background-image: url(../images/p2-txt.png);
+	background-repeat: no-repeat;
+	background-size: 2.14rem 10rem;
+}
+.p2 .item:nth-child(1) .p2-txt {
+	background-position: 0 1px;
+}
+.p2 .item:nth-child(2) .p2-txt {
+	background-position: 0 -2.30rem;
+}
+.p2 .item:nth-child(3) .p2-txt {
+	background-position: 0 -4.58rem;
+}
+.p2 .item:nth-child(4) .p2-txt {
+	background-position: 0 -6.90rem;
+}
+.p2 .item:nth-child(5) .p2-txt {
+	margin-bottom: 0;
+	background-position: 0 -9.20rem;
+}
+@-webkit-keyframes rotate {
+	0% {
+		-webkit-transform: rotate(0);
+		transform: rotate(0);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+@keyframes rotate {
+	0% {
+		-webkit-transform: rotate(0);
+		transform: rotate(0);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+@-webkit-keyframes scale {
+	0% {
+		-webkit-transform: scale(0.8);
+		transform: scale(0.8);
+	}
+	100% {
+		-webkit-transform: scale(1.2);
+		transform: scale(1.2);
+	}
+}
+@keyframes scale {
+	0% {
+		-webkit-transform: scale(0.8);
+		transform: scale(0.8);
+	}
+	100% {
+		-webkit-transform: scale(1.2);
+		transform: scale(1.2);
+	}
+}
+@-webkit-keyframes light {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes light {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+/*详情页*/
+.p-d {
+
+}
+.p-d-common {
+	background: url(../images/d-common.png);
+	background-repeat: no-repeat;
+	background-size: 8.22rem 10rem;
+}
+.p-d-title-wrp {
+	display: -webkit-flex;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	width: 3.37rem;
+	height: 1.31rem;
+	margin: 0.6rem auto 0;
+	background-position: 0 0;
+}
+.p-d-title {
+	width: 2.30rem;
+	height: 0.65rem;
+}
+.p-d-line {
+	position: absolute;
+    display: -webkit-flex;
+    display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 7.5rem;
+	height: 4.53rem;
+	margin-top: 1rem;
+	background-image: url(../images/d-line-bg.png);
+	background-size: 0.32rem 4.53rem;
+	background-repeat: repeat-x;
+}
+.p-d-line-img {
+	width: 6.52rem;
+	height: 3.73rem;
+	background: url(../images/demo1-main.jpg) no-repeat center;
+	background-size: 6.52rem 3.73rem;
+}
+.p-d-light {
+	position: relative;
+	width: 7.5rem;
+	height: 4.07rem;
+	margin-top: 4.5rem;
+}
+.p-d-light-hight {
+	position: absolute;
+	left: 52%;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+	width: 9.17rem;
+	height: 4.07rem;
+	background: url(../images/d-light-hight.png) no-repeat center;
+	background-size: 9.17rem 4.07rem;
+	-webkit-animation: light 2s infinite forwards;
+	animation: light 2s infinite forwards;
+}
+.p-d-light-low {
+	opacity: 0;
+	position: absolute;
+	left: 52%;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+	width: 8.96rem;
+	height: 4.07rem;
+	background: url(../images/d-light-low.png) no-repeat center;
+	background-size: 8.96rem 4.07rem;
+	-webkit-animation: light 2s infinite forwards;
+	animation: light 2s infinite forwards;
+}
+.p-d-video {
+	position: relative;
+	width: 1.77rem;
+	height: 2.31rem;
+	margin: 0 auto;
+	background-position: -4.36rem 0px;
+}
+.p-d-video-btn {
+	position: absolute;
+	bottom: .7rem;
+    left: .98rem;
+	width: 0.44rem;
+	height: 0.44rem;
+	background-position: -4.52rem -2.72rem;
+	-webkit-animation: scale 2s infinite forwards;
+	animation: scale 2s infinite forwards;
+}
+.p-d-light-des {
+	opacity: 0;
+	width: 5.58rem;
+	height: 0.99rem;
+	-webkit-transform: translateY(2rem);
+	transform: translateY(2rem);
+	background: url(../images/demo1-light-des.png) no-repeat center;
+	background-size: 5.58rem 0.99rem;
+	-webkit-animation: light 2s 1s forwards;
+	animation: light 2s 1s forwards;
+}
+.p-d2-logo {
+	width: 0.98rem;
+	height: 1.11rem;
+	margin-top: 0.6rem;
+	background-position: -4.30rem -5.02rem; 
+}
+.p-d2-line {
+	display: -webkit-flex;
+    display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 7.5rem;
+	height: 4.97rem;
+	margin-top: .3rem;
+	margin-bottom: .43rem;
+	background-image: url(../images/d2-line-bg.png);
+	background-size: 0.36rem 4.97rem;
+	background-repeat: repeat-x;
+}
+.p-d2-des {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 4.45rem;
+	height: 2.41rem;
+	background: url(../images/demo1-des.png) no-repeat center;
+	background-size: 4.45rem 2.41rem;
+}
+.p-d2-bottom { 
+	margin-top: 0.33rem;
+	text-align: center;
+}
+.p-d2-btn {
+	position: relative;
+	display: inline-block;
+}
+.p-d2-back,.p-d2-share {
+	width: 1.35rem;
+	height: 1.35rem;
+	background: url(../images/d2-wheel.png) no-repeat center;
+    background-size: 1.35rem 1.35rem;
+    -webkit-animation: rotate 3s linear infinite; 
+	animation: rotate 3s linear infinite; 
+}
+.p-d2-back-a {
+	width: 0.9rem;
+	height: 0.9rem;
+	background-position: -4.32rem -3.58rem;
+}
+.p-d2-share-a {
+	width: 0.9rem;
+	height: 0.9rem;
+	background-position: -5.82rem -3.58rem;
+}
+.p-d2-ad {
+	margin-top: 0.37rem;
+}
+.p-d2-ad-item {
+    width: 2.02rem;
+    height: 0.7rem;
+    background-position: 0 -8.20rem;
+}
+.demo1 .p-d-title {
+	/*background-position: 0 -1.98rem;*/
+	/*background-position: 0 -3.28rem;*/
+	/*background-position: 0 -4.45rem;*/
+	/*background-position: 0 -5.60rem;*/
+	background-position: 0 -6.90rem;
+}
+
