@@ -1,0 +1,60 @@
+html,body,div,a,img,p,span,ul,ol,li,form,section,input,button {
+  margin: 0;
+  padding: 0;
+}
+a { background: transparent; text-decoration: none; -webkit-tap-highlight-color: transparent; color: #000; }
+audio, canvas, progress, video { display: inline-block; vertical-align: baseline; } audio:not([controls]) { display: none; height: 0; }
+html,body {
+	height: 100%;
+}
+html {
+	font-family: "Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif;
+}
+body {
+	max-width: 500px;
+	margin: 0 auto;
+}
+.wrp {
+	position: relative;
+	height: 100%;
+	background: url(../images/bg.jpg) no-repeat center;
+	background-size: cover;
+}
+.ico-music {
+	position: absolute;
+	top: 0.3rem;
+	right: 0.2rem;
+	width: 0.43rem;
+	height: 0.40rem;
+	padding: 5px;
+	background: url(../images/music.png) no-repeat center;
+	background-size: 0.43rem 0.43rem;
+}
+.p1-title {
+	display: block;
+	width: 6.01rem;
+	height: 1.68rem;
+	margin: 0 auto;
+	padding-top: 0.7rem;
+}
+.p1-video {
+	margin: 0.45rem auto 0.3rem;
+	width: 7.55rem;
+	height: 4.44rem;
+	background: url(../images/p1-video.png) no-repeat center;
+	background-size: cover;
+}
+.p1-des {
+	font-size: 12px;
+	line-height: 20px;
+	color: #000;
+	text-align: center;
+}
+.p1-btn {
+	display: block;
+	width: 2.02rem;
+	height: 1.02rem;
+	margin: 0.3rem auto 0;
+	background: url(../images/p1-btn.png) no-repeat center;
+	background-size: cover;
+}
