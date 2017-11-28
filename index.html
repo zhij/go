@@ -101,10 +101,11 @@
 	        </div>
 	    </div>
     </div>
-    <audio src="music/p1.mp3" autoplay>
+    <audio id="bgm" src="music/p1.mp3" autoplay look>
 	您的浏览器不支持 audio 标签。
 	</audio>
 	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 	<script type="text/javascript" src="js/swiper.jquery.min.js"></script>
 	<script type="text/javascript">
 		var swiper = new Swiper('.swiper-container', {
@@ -124,6 +125,13 @@
 		$(".p2-wheel").click(function(){
 			window.location.href = 'details.html'
 		})
+
+		//一般情况下，这样就可以自动播放了，但是一些奇葩iPhone机不可以 
+	    document.getElementById('bgm').play(); 
+	    //必须在微信Weixin JSAPI的WeixinJSBridgeReady才能生效 
+	    document.addEventListener("WeixinJSBridgeReady", function () { 
+	        document.getElementById('bgm').play(); 
+	    }, false); 
 	</script>
 </body>
 </html>
