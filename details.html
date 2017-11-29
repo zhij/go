@@ -30,11 +30,11 @@
 	</script>
 </head>
 <body>
-	<div class="wrp demo1">
+	<div class="wrp demo5">
 		<div class="ico-music play"></div>
 		<div class="swiper-container">
 	        <div class="swiper-wrapper">
-	            <div class="swiper-slide p-d">
+	            <div class="swiper-slide p-d swiper-no-swiping">
 	            	<div class="p-d-title-wrp p-d-common">
 	            		<div class="p-d-title p-d-common"></div>
 	            	</div>
@@ -47,10 +47,10 @@
 	            		<div class="p-d-light-des"></div>
 	            	</div>
 	            	<div class="p-d-video p-d-common">
-	            		<a class="p-d-video-btn p-d-common" href="javascript:;"></a>
+	            		<a class="p-d-video-btn p-d-common go-next" href="javascript:;"></a>
 	            	</div>
 	            </div>
-	            <div class="swiper-slide p-d2">
+	            <div class="swiper-slide p-d2 swiper-no-swiping">
 					<div class="p-d2-logo p-d-common"></div>
 						<div class="p-d2-line">
 							<div class="p-d2-screen">
@@ -59,6 +59,7 @@
 			            		<div class="p-d2-line-img p-d2-line-img3"></div>
 			            		<div class="p-d2-line-img p-d2-line-img4"></div>
 			            		<div class="p-d2-line-img p-d2-line-img5"></div>
+			            		<div class="p-d2-line-img p-d2-line-img6"></div>
 			            	</div>
 	            		</div>
 	            	<div class="p-d2-des"></div>
@@ -66,27 +67,60 @@
 	            		<div class="p-d2-btn">
 		            		<div class="p-d2-back">
 			            	</div>
-			            	<a class="p-d2-back-a p-d-common center" href="javascript:;"></a>
+			            	<a class="p-d2-back-a p-d-common center" href="index.html?from=details"></a>
 		            	</div>
 		            	<div class="p-d2-btn">
 			            	<div class="p-d2-share">
 			            	</div>
-			            	<a class="p-d2-share-a p-d-common center" href="javascript:;"></a>
+			            	<a class="p-d2-share-a p-d-common center go-next" href="javascript:;"></a>
 		            	</div>
 	            	</div>
 	            	<div class="p-d2-ad">
-	            		<div class="p-d2-ad-item p-d-common"></div>
+	            		<div class="p-d2-ad-item p-d-common ad1"></div>
+	            		<div class="p-d2-ad-item p-d-common ad2"></div>
 	            	</div>
+	            </div>
+	            <div class="swiper-slide p-s swiper-no-swiping">
+					<div class="p-s-des"></div>
+					<div id="show-layer" class="p-s-men swing"></div>
+					<div class="p-s-logo"></div>
+					<div class="p-s-bottom">
+						<div class="p-s-kl">
+							<div class="p-s-logo1"></div>
+							<div class="p-d2-logo p-d-common p-s-logo2"></div>
+						</div>
+						<img class="p-s-qrcode" src="images/p-s-qrcode.png" alt="">
+					</div>
 	            </div>
             </div>
         </div>
+        <div class="share-layer">
+			<div class="p-s-arrow"></div>
+			<div class="p-s-share swing"></div>
+		</div>
     </div>
     <script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/swiper.jquery.min.js"></script>
 	<script type="text/javascript">
 		var swiper1 = new Swiper('.swiper-container', {
-			direction : 'vertical'
+			direction : 'vertical',
+			noSwiping : true
 		});
+
+		$(".go-next").click(function(){
+			swiper1.slideNext();
+		})
+
+		$("#show-layer").click(function(){
+			$(".share-layer").show();
+			$(this).removeClass("swing");
+		})
+
+		$(".share-layer").click(function(){
+			$(this).hide();
+			$("#show-layer").addClass("swing");
+		})
+
 	</script>
 </body>
 </html>
