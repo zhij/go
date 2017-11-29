@@ -30,7 +30,7 @@
 	</script>
 </head>
 <body>
-	<div class="wrp demo5">
+	<div class="wrp demo3">
 		<div class="ico-music play"></div>
 		<div class="swiper-container">
 	        <div class="swiper-wrapper">
@@ -99,28 +99,13 @@
 			<div class="p-s-share swing"></div>
 		</div>
     </div>
+    <audio id="bgm" src="music/demo3.mp3" autoplay loop="loop">
+	您的浏览器不支持 audio 标签。
+	</audio>
     <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 	<script type="text/javascript" src="js/swiper.jquery.min.js"></script>
-	<script type="text/javascript">
-		var swiper1 = new Swiper('.swiper-container', {
-			direction : 'vertical',
-			noSwiping : true
-		});
+	<script type="text/javascript" src="js/public.js"></script>
 
-		$(".go-next").click(function(){
-			swiper1.slideNext();
-		})
-
-		$("#show-layer").click(function(){
-			$(".share-layer").show();
-			$(this).removeClass("swing");
-		})
-
-		$(".share-layer").click(function(){
-			$(this).hide();
-			$("#show-layer").addClass("swing");
-		})
-
-	</script>
 </body>
 </html>

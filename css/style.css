@@ -16,6 +16,10 @@ html {
 body {
 	max-width: 500px;
 	margin: 0 auto;
+	-webkit-tap-highlight-color: transparent;
+  	-webkit-touch-callout: none; 
+  	-webkit-appearance: none;
+  	-webkit-tap-highlight-color: transparent;
 }
 .wrp {
 	position: relative;
@@ -323,7 +327,7 @@ body {
 	align-items: center;
 	width: 7.5rem;
 	height: 4.53rem;
-	margin-top: 1rem;
+	margin-top: .8rem;
 	background-image: url(../images/d-line-bg.png);
 	background-size: 0.32rem 4.53rem;
 	background-repeat: repeat-x;
@@ -336,7 +340,7 @@ body {
 	position: relative;
 	width: 7.5rem;
 	height: 4.07rem;
-	margin-top: 4.5rem;
+	margin-top: 3.9rem;
 }
 .p-d-light-hight {
 	position: absolute;
@@ -474,13 +478,13 @@ body {
 .p-d2-ad {
 	display: -webkit-flex;
 	display: flex;
-	margin-top: 0.37rem;
+	margin-top: 0.2rem;
 }
 .p-s-des {
 	opacity: 0;
 	width: 4.3rem;
 	height: 2.51rem;
-	margin-top: 0.9rem;
+	margin-top: 0.8rem;
 	background: url(../images/p-s-des.png) no-repeat center;
 	background-size: 4.3rem 2.51rem;
 }
@@ -491,12 +495,12 @@ body {
 .p-s-men {
 	width: 2.65rem;
 	height: 2.51rem;
-	margin-top: 0.7rem;
+	margin-top: 0.5rem;
 	background: url(../images/p-s-men.png) no-repeat center;
 	background-size: 2.65rem 2.51rem;
 }
 .p-s-logo {
-	margin-top: 0.8rem;
+	margin-top: 0.6rem;
 	width: 6.66rem;
 	height: 2.73rem;
 	background: url(../images/p-s-logo.png) no-repeat center;
@@ -522,7 +526,7 @@ body {
 	display: -webkit-flex;
 	display: flex;
 	align-items: center;
-	margin: 0.6rem 0.37rem 0;
+	margin: 0.5rem 0.37rem 0;
 }
 .p-s-kl {
 	-webkit-flex: 1;
