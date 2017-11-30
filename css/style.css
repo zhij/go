@@ -312,7 +312,7 @@ body {
     align-items: center;
 	width: 3.37rem;
 	height: 1.31rem;
-	margin: 0.6rem auto 0;
+	margin: 0.3rem auto 0;
 	background-position: 0 0;
 }
 .p-d-title {
@@ -327,7 +327,7 @@ body {
 	align-items: center;
 	width: 7.5rem;
 	height: 4.53rem;
-	margin-top: .8rem;
+	margin-top: .5rem;
 	background-image: url(../images/d-line-bg.png);
 	background-size: 0.32rem 4.53rem;
 	background-repeat: repeat-x;
@@ -340,7 +340,7 @@ body {
 	position: relative;
 	width: 7.5rem;
 	height: 4.07rem;
-	margin-top: 3.9rem;
+	margin-top: 3.6rem;
 }
 .p-d-light-hight {
 	position: absolute;
@@ -394,7 +394,7 @@ body {
 .p-d2-logo {
 	width: 0.98rem;
 	height: 1.11rem;
-	margin-top: 0.6rem;
+	margin-top: 0.3rem;
 	background-position: -4.30rem -5.02rem; 
 }
 /*.p-d2-screen {
@@ -422,25 +422,41 @@ body {
 	justify-content: center;
 	align-items: center;
 	/*width: 7.5rem;*/
-	width: 13.2rem;
-	height: 5.1rem;
+	width: 11rem;
+	height: 4.59rem;
 }
 .p-d2-line {
+	position: relative;
 	width: 100%;
 	overflow-x: auto;
 	-webkit-overflow-scrolling: touch;
 	margin-top: .3rem;
-	margin-bottom: .43rem;
+	margin-bottom: .3rem;
 	background-image: url(../images/d2-line-bg.png);
-	background-size: 0.38rem 5.1rem;
+	background-size: 0.342rem 4.59rem;
 	background-repeat: repeat-x;
 }
 .p-d2-line::-webkit-scrollbar {
 	display: none;
 }
+.swiper-slide-active .p-d-arrow {
+	opacity: 0;
+	position: absolute;
+	right: 20px;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	width: 32px;
+	height: 32px;
+	background: url(../images/right.png) no-repeat center;
+	background-size: 32px 32px;
+	-webkit-animation: light 1.5s linear 3; 
+	animation: light 1.5s linear 3; 
+}
 .p-d2-line-img {
-	width: 2.2rem;
-	height: 3.9rem;
+    width: 1.98rem;
+    height: 3.51rem;
+        /*background-size: 1.98rem 3.51rem;*/
 }
 
 .p-d2-des {
@@ -450,7 +466,7 @@ body {
 	align-items: center;
 }
 .p-d2-bottom { 
-	margin-top: 0.33rem;
+	margin-top: 0.23rem;
 	text-align: center;
 }
 .p-d2-btn {
@@ -476,9 +492,12 @@ body {
 	background-position: -5.82rem -3.58rem;
 }
 .p-d2-ad {
-	display: -webkit-flex;
-	display: flex;
 	margin-top: 0.2rem;
+	text-align: center;
+	font-size: 0;
+}
+.p-d2-ad-item {
+	display: inline-block;
 }
 .p-s-des {
 	opacity: 0;
@@ -637,23 +656,23 @@ body {
 }
 .demo1 .p-d2-line-img1 {
 	background: url(../images/demo1-1.jpg) no-repeat center;
-	background-size: 2.2rem 3.9rem;
+	background-size: 1.98rem 3.51rem;
 }
 .demo1 .p-d2-line-img2 {
 	background: url(../images/demo1-2.jpg) no-repeat center;
-	background-size: 2.2rem 3.9rem;
+	background-size: 1.98rem 3.51rem;
 }
 .demo1 .p-d2-line-img3 {
 	background: url(../images/demo1-3.jpg) no-repeat center;
-	background-size: 2.2rem 3.9rem;
+	background-size: 1.98rem 3.51rem;
 }
 .demo1 .p-d2-line-img4 {
 	background: url(../images/demo1-4.jpg) no-repeat center;
-	background-size: 2.2rem 3.9rem;
+	background-size: 1.98rem 3.51rem;
 }
 .demo1 .p-d2-line-img5 {
 	background: url(../images/demo1-5.jpg) no-repeat center;
-	background-size: 2.2rem 3.9rem;
+	background-size: 1.98rem 3.51rem;
 }
 .demo1 .p-d2-des {
 	width: 4.45rem;
@@ -685,19 +704,19 @@ body {
 }
 .demo2 .p-d2-line-img1 {
 	background: url(../images/demo2-1.jpg) no-repeat center;
-	background-size: 2.2rem 3.9rem;
+	background-size: 1.98rem 3.51rem;
 }
 .demo2 .p-d2-line-img2 {
 	background: url(../images/demo2-2.jpg) no-repeat center;
-	background-size: 2.2rem 3.9rem;
+	background-size: 1.98rem 3.51rem;
 }
 .demo2 .p-d2-line-img3 {
 	background: url(../images/demo2-3.jpg) no-repeat center;
-	background-size: 2.2rem 3.9rem;
+	background-size: 1.98rem 3.51rem;
 }
 .demo2 .p-d2-line-img4 {
 	background: url(../images/demo2-4.jpg) no-repeat center;
-	background-size: 2.2rem 3.9rem;
+	background-size: 1.98rem 3.51rem;
 }
 .demo2 .p-d2-des {
 	width: 4.75rem;
@@ -733,27 +752,27 @@ body {
 }
 .demo3 .p-d2-line-img1 {
 	background: url(../images/demo3-1.jpg) no-repeat center;
-	background-size: 2.2rem 3.9rem;
+	background-size: 1.98rem 3.51rem;
 }
 .demo3 .p-d2-line-img2 {
 	background: url(../images/demo3-2.jpg) no-repeat center;
-	background-size: 2.2rem 3.9rem;
+	background-size: 1.98rem 3.51rem;
 }
 .demo3 .p-d2-line-img3 {
 	background: url(../images/demo3-3.jpg) no-repeat center;
-	background-size: 2.2rem 3.9rem;
+	background-size: 1.98rem 3.51rem;
 }
 .demo3 .p-d2-line-img4 {
 	background: url(../images/demo3-4.jpg) no-repeat center;
-	background-size: 2.2rem 3.9rem;
+	background-size: 1.98rem 3.51rem;
 }
 .demo3 .p-d2-line-img5 {
 	background: url(../images/demo3-5.jpg) no-repeat center;
-	background-size: 2.2rem 3.9rem;
+	background-size: 1.98rem 3.51rem;
 }
 .demo3 .p-d2-line-img6 {
 	background: url(../images/demo3-6.jpg) no-repeat center;
-	background-size: 2.2rem 3.9rem;
+	background-size: 1.98rem 3.51rem;
 }
 .demo3 .p-d2-des {
 	width: 4.19rem;
@@ -783,23 +802,23 @@ body {
 }
 .demo4 .p-d2-line-img1 {
 	background: url(../images/demo4-1.jpg) no-repeat center;
-	background-size: 2.2rem 3.9rem;
+	background-size: 1.98rem 3.51rem;
 }
 .demo4 .p-d2-line-img2 {
 	background: url(../images/demo4-2.jpg) no-repeat center;
-	background-size: 2.2rem 3.9rem;
+	background-size: 1.98rem 3.51rem;
 }
 .demo4 .p-d2-line-img3 {
 	background: url(../images/demo4-3.jpg) no-repeat center;
-	background-size: 2.2rem 3.9rem;
+	background-size: 1.98rem 3.51rem;
 }
 .demo4 .p-d2-line-img4 {
 	background: url(../images/demo4-4.jpg) no-repeat center;
-	background-size: 2.2rem 3.9rem;
+	background-size: 1.98rem 3.51rem;
 }
 .demo4 .p-d2-line-img5 {
 	background: url(../images/demo4-5.jpg) no-repeat center;
-	background-size: 2.2rem 3.9rem;
+	background-size: 1.98rem 3.51rem;
 }
 .demo4 .p-d2-des {
 	width: 4.30rem;
@@ -828,23 +847,23 @@ body {
 }
 .demo5 .p-d2-line-img1 {
 	background: url(../images/demo5-1.jpg) no-repeat center;
-	background-size: 2.2rem 3.9rem;
+	background-size: 1.98rem 3.51rem;
 }
 .demo5 .p-d2-line-img2 {
 	background: url(../images/demo5-2.jpg) no-repeat center;
-	background-size: 2.2rem 3.9rem;
+	background-size: 1.98rem 3.51rem;
 }
 .demo5 .p-d2-line-img3 {
 	background: url(../images/demo5-3.jpg) no-repeat center;
-	background-size: 2.2rem 3.9rem;
+	background-size: 1.98rem 3.51rem;
 }
 .demo5 .p-d2-line-img4 {
 	background: url(../images/demo5-4.jpg) no-repeat center;
-	background-size: 2.2rem 3.9rem;
+	background-size: 1.98rem 3.51rem;
 }
 .demo5 .p-d2-line-img5 {
 	background: url(../images/demo5-5.jpg) no-repeat center;
-	background-size: 2.2rem 3.9rem;
+	background-size: 1.98rem 3.51rem;
 }
 .demo5 .p-d2-des {
 	width: 5.54rem;

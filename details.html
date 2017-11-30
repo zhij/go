@@ -30,7 +30,7 @@
 	</script>
 </head>
 <body>
-	<div class="wrp demo5">
+	<div id="wrp" class="wrp demo1">
 		<div class="ico-music play"></div>
 		<div class="swiper-container">
 	        <div class="swiper-wrapper">
@@ -59,25 +59,24 @@
 			            		<div class="p-d2-line-img p-d2-line-img3"></div>
 			            		<div class="p-d2-line-img p-d2-line-img4"></div>
 			            		<div class="p-d2-line-img p-d2-line-img5"></div>
-			            		<div class="p-d2-line-img p-d2-line-img6"></div>
 			            	</div>
+			            	<div class="p-d-arrow"></div>
 	            		</div>
 	            	<div class="p-d2-des"></div>
 	            	<div class="p-d2-bottom">
 	            		<div class="p-d2-btn">
 		            		<div class="p-d2-back">
 			            	</div>
-			            	<a class="p-d2-back-a p-d-common center" href="index.html?from=details"></a>
+			            	<a class="p-d2-back-a p-d-common center" href="index.html?pagefrom=details"></a>
 		            	</div>
 		            	<div class="p-d2-btn">
 			            	<div class="p-d2-share">
 			            	</div>
-			            	<a class="p-d2-share-a p-d-common center go-next" href="javascript:;"></a>
+			            	<a id="goto-share" class="p-d2-share-a p-d-common center" href="javascript:;"></a>
 		            	</div>
 	            	</div>
 	            	<div class="p-d2-ad">
 	            		<div class="p-d2-ad-item p-d-common ad1"></div>
-	            		<div class="p-d2-ad-item p-d-common ad2"></div>
 	            	</div>
 	            </div>
 	            <div class="swiper-slide p-s swiper-no-swiping">
@@ -99,18 +98,109 @@
 			<div class="p-s-share swing"></div>
 		</div>
     </div>
+    <audio id="bgm" autoplay loop="loop">
+	您的浏览器不支持 audio 标签。
+	</audio>
     <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 	<script type="text/javascript" src="js/swiper.jquery.min.js"></script>
 	<script type="text/javascript">
 		var swiper1 = new Swiper('.swiper-container', {
 			direction : 'vertical',
 			noSwiping : true
 		});
-
 		$(".go-next").click(function(){
 			swiper1.slideNext();
 		})
 
+		//获取url中的参数
+		function getUrlParam(name) {
+		    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+		    var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+		    if (r != null) return unescape(r[2]); return null; //返回参数值
+		}
+
+		var demoList = [
+			{
+				imgsLen: 5,
+				adLen: 1
+			},
+			{
+				imgsLen: 4,
+				adLen: 2
+			},
+			{
+				imgsLen: 6,
+				adLen: 1
+			},
+			{
+				imgsLen: 5,
+				adLen: 1
+			},
+			{
+				imgsLen: 5,
+				adLen: 1
+			}
+		];
+
+		var pagefrom = getUrlParam("pagefrom");
+		switch(parseInt(pagefrom)){
+			case 2:
+			case 3:
+			case 4:
+			case 5:
+				var demoItem = demoList[pagefrom-1];
+		    	var demoClass = "demo"+pagefrom;
+		    	var currentBgm = "music/demo"+pagefrom+".mp3";
+		    	$("#bgm").attr("src",currentBgm);
+		    	$("#wrp").removeClass("demo1").addClass(demoClass);
+		    	var screenHtml = "";
+		    	for(var i=0; i<demoItem.imgsLen; i++){
+		    		screenHtml += '<div class="p-d2-line-img p-d2-line-img'+(i+1)+'"></div>';
+		    	}
+		    	var width = (2.2 * demoItem.imgsLen)+'rem';
+		    	$(".p-d2-screen").html(screenHtml).css("width",width);
+		    	if(demoItem.adLen == 2){
+		    		$(".p-d2-ad").append('<div class="p-d2-ad-item p-d-common ad2"></div>');
+		    	}
+		    	break;
+		    default: 
+		    	var defaultBgm = "music/demo1.mp3";
+		    	$("#bgm").attr("src",defaultBgm);
+		}
+
+		$("#goto-share").click(function(){
+			swiper1.slideNext();
+			if($(".ico-music").hasClass("play")){
+				$("#bgm").attr("src",'music/share.mp3');
+			}
+		})
+
+		// 音乐播放，暂停
+		$(".ico-music").click(function(){
+			if(swiper1.activeIndex == 2){
+				if($("#bgm").attr("src") != "music/share.mp3"){
+					$("#bgm").attr("src",'music/share.mp3');
+				}
+			} 
+			// 正在播放
+			if($(this).hasClass("play")){
+				$(this).removeClass("play");
+				$("#bgm")[0].pause(); 
+			}else {
+				$(this).addClass("play");
+				$("#bgm")[0].play(); 
+			}
+		})
+
+		//一般情况下，这样就可以自动播放了，但是一些奇葩iPhone机不可以 
+		document.getElementById('bgm').play(); 
+		//必须在微信Weixin JSAPI的WeixinJSBridgeReady才能生效 
+		document.addEventListener("WeixinJSBridgeReady", function () { 
+		    document.getElementById('bgm').play(); 
+		}, false);
+
+		// 分享弹层
 		$("#show-layer").click(function(){
 			$(".share-layer").show();
 			$(this).removeClass("swing");

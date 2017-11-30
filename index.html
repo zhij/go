@@ -54,7 +54,7 @@
 						<div class="item left">
 							<div class="p2-round">
 								<div class="p2-wheel"></div>
-								<a href="details1.html?from=1" class="p2-play"></a>
+								<a href="details.html?pagefrom=1" class="p2-play"></a>
 							</div>
 							<div class="p2-bg">
 								<div class="p2-txt"></div>
@@ -66,13 +66,13 @@
 							</div>
 							<div class="p2-round">
 								<div class="p2-wheel"></div>
-								<a href="details2.html?from=2" class="p2-play"></a>
+								<a href="details.html?pagefrom=2" class="p2-play"></a>
 							</div>
 						</div>
 						<div class="item left">
 							<div class="p2-round">
 								<div class="p2-wheel"></div>
-								<a href="details3.html?from=3" class="p2-play"></a>
+								<a href="details.html?pagefrom=3" class="p2-play"></a>
 							</div>
 							<div class="p2-bg">
 								<div class="p2-txt"></div>
@@ -84,13 +84,13 @@
 							</div>
 							<div class="p2-round">
 								<div class="p2-wheel"></div>
-								<a href="details4.html?from=4" class="p2-play"></a>
+								<a href="details.html?pagefrom=4" class="p2-play"></a>
 							</div>
 						</div>
 						<div class="item left">
 							<div class="p2-round">
 								<div class="p2-wheel"></div>
-								<a href="details5.html?from=5" class="p2-play"></a>
+								<a href="details.html?pagefrom=5" class="p2-play"></a>
 							</div>
 							<div class="p2-bg">
 								<div class="p2-txt"></div>
@@ -108,8 +108,6 @@
 	<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 	<script type="text/javascript" src="js/swiper.jquery.min.js"></script>
 	<script type="text/javascript">
-		
-
 		 //获取url中的参数
         function getUrlParam(name) {
             var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
@@ -117,9 +115,9 @@
             if (r != null) return unescape(r[2]); return null; //返回参数值
         }
 
-        var from = getUrlParam("from");
+        var pagefrom = getUrlParam("pagefrom");
         // 从详情页跳过来，直接去到目录页
-        if(from == "details"){
+        if(pagefrom == "details"){
         	var swiper = new Swiper('.swiper-container', {
 				direction : 'vertical',
 				noSwiping : true,
