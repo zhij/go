@@ -39,7 +39,7 @@
 	            		<div class="p-d-title p-d-common"></div>
 	            	</div>
 	            	<div class="p-d-line">
-	            		<div class="p-d-line-img">
+	            		<div class="p-d-line-img show">
 	            			<canvas id="canvas" class="canvas">
 	            		</div>
 	            		
@@ -117,7 +117,11 @@
 			noSwiping : true
 		});
 		$(".go-next").click(function(){
-			swiper1.slideNext();
+			$(".p-d-line-img").removeClass("show");
+    		$("#canvas").show();
+			setTimeout(function(){
+				swiper1.slideNext();
+	    	},1000);
 		})
 
 		//获取url中的参数
@@ -175,10 +179,7 @@
 		    	var defaultBgm = "music/demo1.mp3";
 		    	$("#bgm").attr("src",defaultBgm);
 		}
-		setTimeout(function(){
-    		$("#canvas").fadeOut();
-    		$(".p-d-line-img").addClass("show");
-    	},1000);
+		
 		$("#goto-share").click(function(){
 			swiper1.slideNext();
 			if($(".ico-music").hasClass("play")){
