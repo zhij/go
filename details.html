@@ -39,7 +39,10 @@
 	            		<div class="p-d-title p-d-common"></div>
 	            	</div>
 	            	<div class="p-d-line">
-	            		<div class="p-d-line-img"></div>
+	            		<div class="p-d-line-img">
+	            			<canvas id="canvas" class="canvas">
+	            		</div>
+	            		
 	            	</div>
 	            	<div class="p-d-light">
 	            		<div class="p-d-light-low"></div>
@@ -81,7 +84,10 @@
 	            </div>
 	            <div class="swiper-slide p-s swiper-no-swiping">
 					<div class="p-s-des"></div>
-					<div id="show-layer" class="p-s-men swing"></div>
+					<!-- <div id="show-layer" class="p-s-men swing"></div> -->
+					<div id="show-layer" class="p-s-men">
+						<div class="p-s-men-top men"></div>
+					</div>
 					<div class="p-s-logo"></div>
 					<div class="p-s-bottom">
 						<div class="p-s-kl">
@@ -104,6 +110,7 @@
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 	<script type="text/javascript" src="js/swiper.jquery.min.js"></script>
+	<script type="text/javascript" src="js/canvas.js"></script>
 	<script type="text/javascript">
 		var swiper1 = new Swiper('.swiper-container', {
 			direction : 'vertical',
@@ -168,7 +175,10 @@
 		    	var defaultBgm = "music/demo1.mp3";
 		    	$("#bgm").attr("src",defaultBgm);
 		}
-
+		setTimeout(function(){
+    		$("#canvas").fadeOut();
+    		$(".p-d-line-img").addClass("show");
+    	},1000);
 		$("#goto-share").click(function(){
 			swiper1.slideNext();
 			if($(".ico-music").hasClass("play")){
@@ -203,12 +213,12 @@
 		// 分享弹层
 		$("#show-layer").click(function(){
 			$(".share-layer").show();
-			$(this).removeClass("swing");
+			$(".p-s-men-top").removeClass("men");
 		})
 
 		$(".share-layer").click(function(){
 			$(this).hide();
-			$("#show-layer").addClass("swing");
+			$(".p-s-men-top").addClass("men");
 		})
 
 	</script>
