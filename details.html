@@ -39,7 +39,7 @@
 	            		<div class="p-d-title p-d-common"></div>
 	            	</div>
 	            	<div class="p-d-line">
-	            		<div class="p-d-line-img show">
+	            		<div class="p-d-line-img">
 	            			<canvas id="canvas" class="canvas">
 	            		</div>
 	            		
@@ -49,8 +49,12 @@
 	            		<div class="p-d-light-hight"></div>
 	            		<div class="p-d-light-des"></div>
 	            	</div>
-	            	<div class="p-d-video p-d-common">
-	            		<a class="p-d-video-btn p-d-common go-next" href="javascript:;"></a>
+	            	<div class="p-d-v">
+		            	<div class="p-d-video-top go-next">
+		            	</div>
+		            	<div class="p-d-video go-next">
+		            		<!-- <a class="p-d-video-btn p-d-common go-next" href="javascript:;"></a> -->
+		            	</div>
 	            	</div>
 	            </div>
 	            <div class="swiper-slide p-d2 swiper-no-swiping">
@@ -84,10 +88,10 @@
 	            </div>
 	            <div class="swiper-slide p-s swiper-no-swiping">
 					<div class="p-s-des"></div>
-					<!-- <div id="show-layer" class="p-s-men swing"></div> -->
-					<div id="show-layer" class="p-s-men">
+					<div id="show-layer" class="p-s-men swing"></div>
+					<!-- <div id="show-layer" class="p-s-men">
 						<div class="p-s-men-top men"></div>
-					</div>
+					</div> -->
 					<div class="p-s-logo"></div>
 					<div class="p-s-bottom">
 						<div class="p-s-kl">
@@ -117,11 +121,10 @@
 			noSwiping : true
 		});
 		$(".go-next").click(function(){
-			$(".p-d-line-img").removeClass("show");
-    		$("#canvas").show();
-			setTimeout(function(){
-				swiper1.slideNext();
-	    	},1000);
+			// $(".p-d-line-img").removeClass("show");
+    		// $("#canvas").show();
+			swiper1.slideNext();
+	    	
 		})
 
 		//获取url中的参数
@@ -169,7 +172,8 @@
 		    	for(var i=0; i<demoItem.imgsLen; i++){
 		    		screenHtml += '<div class="p-d2-line-img p-d2-line-img'+(i+1)+'"></div>';
 		    	}
-		    	var width = (2.2 * demoItem.imgsLen)+'rem';
+		    	screenHtml = screenHtml+screenHtml+screenHtml+screenHtml+screenHtml+screenHtml+screenHtml+screenHtml+screenHtml+screenHtml;
+		    	var width = (22 * demoItem.imgsLen)+'rem';
 		    	$(".p-d2-screen").html(screenHtml).css("width",width);
 		    	if(demoItem.adLen == 2){
 		    		$(".p-d2-ad").append('<div class="p-d2-ad-item p-d-common ad2"></div>');
@@ -214,14 +218,18 @@
 		// 分享弹层
 		$("#show-layer").click(function(){
 			$(".share-layer").show();
-			$(".p-s-men-top").removeClass("men");
+			$(".p-s-men").removeClass("swing");
 		})
 
 		$(".share-layer").click(function(){
 			$(this).hide();
-			$(".p-s-men-top").addClass("men");
+			$(".p-s-men").addClass("swing");
 		})
 
+		setTimeout(function(){
+			$("#canvas").hide();
+			$(".p-d-line-img").addClass("show");
+		},4000)
 	</script>
 </body>
 </html>

@@ -368,12 +368,32 @@ body {
 	-webkit-animation: light 2s infinite forwards;
 	animation: light 2s infinite forwards;
 }
+.p-d-v {
+	margin-top: -0.12rem;
+}
+.p-d-video-top {
+	/*position: absolute;
+    left: 50%;*/
+    -webkit-transform: translate(0.2rem,0.14rem);
+    transform: translate(0.2rem,0.14rem);
+	width: 1rem;
+	height: 0.6rem;
+	margin: 0 auto;
+	/*background-position: -4.36rem 0px;*/
+	background: url(../images/p-d-video-top.png) no-repeat center;
+	background-size: 1rem 0.6rem;
+}	
 .p-d-video {
 	position: relative;
-	width: 1.77rem;
-	height: 2.31rem;
+	width: 1.6rem;
+	height: 1.704rem;
 	margin: 0 auto;
-	background-position: -4.36rem 0px;
+	margin-top: -0.25rem;
+	/*background-position: -4.36rem 0px;*/
+	background: url(../images/p-d-video.png) no-repeat center;
+	background-size: 1.6rem 1.704rem;
+	-webkit-animation: scale 2s infinite forwards;
+	animation: scale 2s infinite forwards;
 }
 .p-d-video-btn {
 	position: absolute;
@@ -441,10 +461,9 @@ body {
 	display: none;
 }
 .swiper-slide-active .p-d-arrow {
-	position: absolute;
+	position: fixed;
 	right: 20px;
-	top: 50%;
-	margin-top: -.5rem;
+	margin-top: -2.8rem;
 	width: 1rem;
 	height: 1rem;
 	background: url(../images/arrow-right.png) no-repeat center;
@@ -517,11 +536,11 @@ body {
 }
 .p-s-men {
 	position: relative;
-	width: 2.65rem;
-	height: 2.51rem;
+	width: 2.763rem;
+	height: 2.6rem;
 	margin-top: 0.8rem;
-	background: url(../images/p-s-men-main.png) no-repeat center;
-	background-size: 2.65rem 1.7rem;
+	background: url(../images/p-s-men1.png) no-repeat center;
+	background-size: 2.763rem 2.6rem;
 }
 .p-s-men-top {
 	position: absolute;
@@ -684,17 +703,21 @@ body {
 }
 @-webkit-keyframes move{
 	0% {
-    	-webkit-transform: translateX(0px);
+		opacity: 0.3;
+    	-webkit-transform: translateX(-50px);
 	}
 	100% {
+		opacity: 1;
     	-webkit-transform: translateX(50px);
 	}
 }
 @keyframes move{
 	0% {
-    	-webkit-transform: translateX(0px);
+		opacity: .3;
+    	-webkit-transform: translateX(-50px);
 	}
 	100% {
+		opacity: 1;
     	-webkit-transform: translateX(50px);
 	}
 }
@@ -939,7 +962,6 @@ body {
 }
 
 .canvas {
-    display: none;
     margin: 0 auto;
     width: 6.52rem;
     height: 3.73rem;
