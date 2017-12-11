@@ -8,7 +8,7 @@
     <meta content="yes" name="apple-touch-fullscreen">
 	<title>这放影机里装...装的是什么</title>
 	<link rel="stylesheet" href="css/swiper.min.css">
-	<link rel="stylesheet" href="css/style.css?v=2">
+	<link rel="stylesheet" href="css/style.css?v=3">
 	<script type="text/javascript">
 		;(function (doc, win) {
 	        var docEl = doc.documentElement,
@@ -182,6 +182,14 @@
 		    default: 
 		    	var defaultBgm = "music/demo1.mp3";
 		    	$("#bgm").attr("src",defaultBgm);
+				var demoItem = demoList[0];
+		    	var screenHtml = "";
+		    	for(var i=0; i<demoItem.imgsLen; i++){
+		    		screenHtml += '<div class="p-d2-line-img p-d2-line-img'+(i+1)+'"></div>';
+		    	}
+		    	screenHtml = screenHtml+screenHtml+screenHtml+screenHtml+screenHtml+screenHtml+screenHtml+screenHtml+screenHtml+screenHtml;
+		    	var width = (22 * demoItem.imgsLen)+'rem';
+		    	$(".p-d2-screen").html(screenHtml).css("width",width);
 		}
 		
 		$("#goto-share").click(function(){
@@ -229,7 +237,7 @@
 		setTimeout(function(){
 			$("#canvas").hide();
 			$(".p-d-line-img").addClass("show");
-		},4000)
+		},2500)
 	</script>
 </body>
 </html>
